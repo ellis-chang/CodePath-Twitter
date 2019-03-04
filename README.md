@@ -2,7 +2,7 @@
 
 This is a basic twitter app to read your tweets.
 
-Time spent: 1 and a half hours spent in total
+Time spent: 1.5 hours spent in total
 
 ## User Stories
 
