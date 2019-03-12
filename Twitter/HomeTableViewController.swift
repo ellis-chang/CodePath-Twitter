@@ -89,12 +89,15 @@ class HomeTableViewController: UITableViewController {
         cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
         let screenName = user["screen_name"] as? String
         cell.screenNameLabel.text = String(format: "@%@", screenName!)
+        //retweet count
         cell.retweetLabel.text = cell.setCount(tweetArray[indexPath.row]["retweet_count"] as! Double)
+        //favorite count
         cell.favoriteLabel.text = cell.setCount(user["favourites_count"] as! Double)
         
         let imageUrl = URL(string: (user["profile_image_url_https"] as? String)!)
         let data = try? Data(contentsOf: imageUrl!)
         
+        //make profile round image
         if let imageData = data {
             cell.profileImageView.image = UIImage(data: imageData)
             cell.profileImageView.layer.cornerRadius = 32.5
